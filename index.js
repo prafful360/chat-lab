@@ -45,7 +45,7 @@ io.on('connection', client => {
         io.emit('user-updated', user)
     });
     client.on('move',(x,y) => {
-        var user = users[id];
+        var user = users[client.id];
         user.x = x;
         user.y = y;
         io.emit('user-updated', user)
