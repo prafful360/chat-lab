@@ -9,7 +9,7 @@ app.listen(80, ()=>{
     io.listen(3000)    
 })
 
-
+app.use(express.static('public'));
 app.set('views','./views');
 app.set('views', path.join(__dirname, 'views'));
 
