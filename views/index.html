@@ -6,11 +6,11 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-  <script src="/socket.io/socket.io.js"></script>
+  <script src="http://localhost:3000/socket.io/socket.io.js"></script>
 </head>
 <body>
 <div class="container">
-    <br>
+    <!-- <br>
     <div class="jumbotron">
         <h1 class="display-4">Send Message</h1>
         <br>
@@ -22,10 +22,18 @@
     </div>
     <div id="messages">
 
-    </div>
+    </div> -->
+
+
+     <canvas id="game" width="500" height="500"></canvas>
+     <br>
+     <input type="text" id="messageInput"/>
+
+
 </div>
-<script>
-   var socket = io();
+<script src="./client.js"></script>
+<!-- <script>
+
     $(() => {
         $("#send").click(()=>{
             sendMessage({name: $("#name").val(), message: $("#message").val()});
@@ -49,6 +57,6 @@
     function sendMessage(message){
       $.post('http://localhost:3000/messages', message)
     }
-</script>
+</script> -->
 </body>
 </html>
