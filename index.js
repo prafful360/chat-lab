@@ -38,6 +38,17 @@ io.on('connection', client => {
         users[client.id] = user;
         client.broadcast.emit('user-connected',user)
         client.emit('users-list', users)
+    });
+    client.on('message', message => {
+        var user = users[client.id];
+        user.message = message;
+        io.emit('user-updated', user)
+    });
+    client.on('move',(x,y) => {
+        var user = users[id];
+        user.x = x;
+        user.y = y;
+        io.emit('user-updated', user)
     })
     client.on('disconnect', () => {
         delete users[client.id];
